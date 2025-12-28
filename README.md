@@ -1,90 +1,97 @@
-Stroke Prediction System 🧠
-Overview
+# Stroke Prediction System
 
-The Stroke Prediction System is a simple web application built using Streamlit. It predicts the risk of stroke in individuals based on their personal, medical, and lifestyle information. The system displays:
+The **Stroke Prediction System** is a machine learning–based healthcare application designed to predict the likelihood of a stroke based on patient health data.  
+It uses a trained ML model and provides predictions through a simple **Python application**, making it useful for early risk assessment and awareness.
 
-Stroke risk probability
-Risk status (High or Low)
-Comparison charts of BMI, Age, and Glucose levels with dataset averages
+---
 
-Session history of predictions
+## Overview
 
-This project is intended for educational purposes and preliminary risk assessment.
+Stroke is one of the leading causes of death and long-term disability worldwide.  
+Early identification of stroke risk can help in prevention and timely medical intervention.
 
-Features
+This project uses historical healthcare data to train a machine learning model that predicts stroke occurrence based on factors such as age, gender, hypertension, heart disease, glucose levels, BMI, and lifestyle habits.
 
-User-friendly input form with patient details
+---
 
-Real-time stroke risk prediction using a trained ML model
+## Features
 
-Visual comparison with dataset averages
+- Data cleaning and preprocessing pipeline
+- Machine learning model training
+- Saved trained model (`model.pkl`)
+- Stroke risk prediction using user input
+- Simple Python-based application interface
+- Uses real healthcare stroke dataset
 
-Session history of all predictions
+---
 
-Background image for a professional look
+## Tech Stack
 
-Requirements
+- **Language:** Python  
+- **Libraries:** Pandas, NumPy, Scikit-learn  
+- **Model:** Supervised Machine Learning classifier  
+- **Data Format:** CSV  
+- **Model Storage:** Pickle (`.pkl`)  
 
-Python 3.10+
+---
 
-Libraries: streamlit, pandas, numpy, matplotlib, joblib, scikit-learn
+## Project Structure
 
-Install dependencies:
+stroke-prediction-system/
+│
+├── app.py                          # Main application for prediction
+├── model_training.py               # Model training script
+├── clean_data.py                   # Data cleaning and preprocessing
+├── model.pkl                       # Trained ML model
+├── healthcare-dataset-stroke-data.csv
+├── cleaned_stroke_data.csv
+├── cleaned_stroke_data copy.csv
+└── README.md
 
-pip install streamlit pandas numpy matplotlib scikit-learn joblib
+---
 
-Files
+## Dataset
 
-Make sure the following files are in the project folder:
+The dataset contains healthcare-related attributes such as:
 
-app.py – Streamlit application
+- Age
+- Gender
+- Hypertension
+- Heart disease
+- Average glucose level
+- BMI
+- Smoking status
+- Stroke occurrence (target variable)
 
-model.pkl – Pre-trained stroke prediction model
+The raw dataset is cleaned and processed before training the model.
 
-cleaned_stroke_data.csv – Dataset for reference
+---
 
-How to Run
+## Model Training
 
-Open VS Code and navigate to the project folder.
+1. Raw data is cleaned using `clean_data.py`
+2. Missing values and categorical features are handled
+3. Data is split into training and testing sets
+4. Machine learning model is trained
+5. Trained model is saved as `model.pkl`
 
-Activate your virtual environment (optional but recommended):
+---
 
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # Mac/Linux
+## How the System Works
 
+1. User provides health-related inputs
+2. Input data is preprocessed
+3. Trained model (`model.pkl`) is loaded
+4. Model predicts stroke risk
+5. Prediction result is displayed
 
-Run the app:
+---
 
-streamlit run app.py
+## How to Run the Project
 
+1. Clone the repository  
+2. Install required Python libraries  
+3. Run the application  
 
-Open the local URL in your browser (http://localhost:8501).
-
-Enter patient information and click Predict to see results.
-
-Input Features
-
-Gender: Male, Female, Other
-
-Age: 0–120
-
-Hypertension: 0 = No, 1 = Yes
-
-Heart Disease: 0 = No, 1 = Yes
-
-Ever Married: Yes, No
-
-Work Type: Private, Self-employed, Govt_job, Children, Never_worked
-
-Residence Type: Urban, Rural
-
-Average Glucose Level: mg/dL
-
-BMI: Body Mass Index
-
-Smoking Status: formerly smoked, never smoked, smokes, Unknown
-
-Author
-
-Nhowmitha Suresh
-3rd Year AI & DS, Roll No: 23AIA63
+```bash
+python app.py
