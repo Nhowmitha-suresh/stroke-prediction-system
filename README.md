@@ -37,16 +37,7 @@ This project uses historical healthcare data to train a machine learning model t
 
 ## Project Structure
 
-stroke-prediction-system/
-│
-├── app.py                          # Main application for prediction
-├── model_training.py               # Model training script
-├── clean_data.py                   # Data cleaning and preprocessing
-├── model.pkl                       # Trained ML model
-├── healthcare-dataset-stroke-data.csv
-├── cleaned_stroke_data.csv
-├── cleaned_stroke_data copy.csv
-└── README.md
+<img width="697" height="261" alt="image" src="https://github.com/user-attachments/assets/6b00bfb9-4614-48b1-ae52-e95c8610856c" />
 
 ---
 
